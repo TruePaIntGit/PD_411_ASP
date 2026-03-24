@@ -1,0 +1,23 @@
+﻿@page "/factorial"
+@rendermode InteractiveServer
+
+@using System.Numerics;
+
+<PageTitle>Factorial</PageTitle>
+
+<h3>Factorial</h3>
+
+<div class="factorial">
+	<input type="number" min="0" @bind="number" @bind:after="Calculate" />
+	@* <input type="number" min="0" @bind="number" @bind:after="Calculate" onclick="alert(@factorial)" /> *@
+	<div id="factorial"> @factorial </div>
+
+</div>
+<ol>
+	@{
+		foreach (BigInteger i in results)
+		{
+			<li>@i</li>
+		}
+	}
+</ol>
