@@ -1,0 +1,22 @@
+﻿@page "/fibonachi"
+@rendermode InteractiveServer
+
+@using System.Numerics;
+
+<PageTitle>Fibonachi</PageTitle>
+
+<h3>Fibonachi</h3>
+
+<div class="fibonachi">
+	<input type="number" min="0" @bind="number" @bind:after="Calculate" />
+	<div id="fibonachi"> @fibonachi </div>
+
+</div>
+<ol>
+	@{
+		foreach (BigInteger i in results)
+		{
+			<li>@i</li>
+		}
+	}
+</ol>
